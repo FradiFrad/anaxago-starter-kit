@@ -3,6 +3,8 @@
 namespace Anaxago\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * Project
@@ -47,7 +49,13 @@ class Project
      *
      * @ORM\Column(name="is_financed", type="boolean")
      */
-    private $isFinanced;
+    private $isFinanced = false;
+
+    /**
+     * One Project has many usersProject.
+     * @OneToMany(targetEntity="UserProject", mappedBy="project"))
+     */
+    private $usersProject;
 
     /**
      * Get id
@@ -102,7 +110,7 @@ class Project
      *
      * @return string
      */
-    public function getTitle(): self
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -153,5 +161,29 @@ class Project
     public function isFinanced(): boolean
     {
         return $this->isFinanced;
+    }
+
+    /**
+     * Set usersProject
+     *
+     * @param array $usersProject
+     *
+     * @return Project
+     */
+    public function setUsersProject(array $usersProject): self
+    {
+        $this->usersProject = $usersProject;
+
+        return $this;
+    }
+
+    /**
+     * Get usersProject
+     *
+     * @return array
+     */
+    public function getUsersProject(): array
+    {
+        return $this->usersProject;
     }
 }

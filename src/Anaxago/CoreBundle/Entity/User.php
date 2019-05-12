@@ -9,6 +9,7 @@
 namespace Anaxago\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToMany;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -74,6 +75,12 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $email;
+
+    /**
+     * One User has many userProjects.
+     * @OneToMany(targetEntity="UserProject", mappedBy="user"))
+     */
+    private $userProjects;
 
     /**
      * @return int
@@ -265,6 +272,30 @@ class User implements UserInterface
         $this->email = $email;
 
         return $this;
+    }
+
+    /**
+     * Set userProjects
+     *
+     * @param array userProjects
+     *
+     * @return User
+     */
+    public function setUserProjects(array $userProjects): self
+    {
+        $this->userProjects = $userProjects;
+
+        return $this;
+    }
+
+    /**
+     * Get userProjects
+     *
+     * @return array
+     */
+    public function getUserProjects(): array
+    {
+        return $this->userProjects;
     }
 
     /**
