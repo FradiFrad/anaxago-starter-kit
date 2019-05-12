@@ -156,9 +156,9 @@ class Project
     /**
      * Get isFinanced
      *
-     * @return boolean
+     * @return bool
      */
-    public function isFinanced(): boolean
+    public function isFinanced(): bool
     {
         return $this->isFinanced;
     }

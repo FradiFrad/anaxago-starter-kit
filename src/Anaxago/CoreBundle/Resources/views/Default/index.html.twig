@@ -16,6 +16,16 @@
                             <p class="card-text">
                                 {{ project.description }}
                             </p>
+                            <div>
+                              {% if project.isFinanced %}
+                                Le projet est financé à hauteur de xx euros.
+                              {% else %}
+                                Le projet n'est pas encore financé.
+                                <a href>Je participe</a>
+                              {% endif %}
+
+
+                            </div>
                         </div>
                     </div>
                 </div>
