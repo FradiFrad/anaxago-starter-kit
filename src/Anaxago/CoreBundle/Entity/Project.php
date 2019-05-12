@@ -42,6 +42,12 @@ class Project
      */
     private $description;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="is_financed", type="boolean")
+     */
+    private $isFinanced;
 
     /**
      * Get id
@@ -60,7 +66,7 @@ class Project
      *
      * @return Project
      */
-    public function setSlug($slug)
+    public function setSlug(string $slug): self
     {
         $this->slug = $slug;
 
@@ -72,7 +78,7 @@ class Project
      *
      * @return string
      */
-    public function getSlug()
+    public function getSlug(): string
     {
         return $this->slug;
     }
@@ -84,7 +90,7 @@ class Project
      *
      * @return Project
      */
-    public function setTitle($title)
+    public function setTitle(string $title): self
     {
         $this->title = $title;
 
@@ -96,7 +102,7 @@ class Project
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): self
     {
         return $this->title;
     }
@@ -108,7 +114,7 @@ class Project
      *
      * @return Project
      */
-    public function setDescription($description)
+    public function setDescription(string $description): self
     {
         $this->description = $description;
 
@@ -120,9 +126,32 @@ class Project
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
-}
 
+    /**
+     * Set isFinanced
+     *
+     * @param string $isFinanced
+     *
+     * @return Project
+     */
+    public function setIsFinanced(boolean $isFinanced): self
+    {
+        $this->isFinanced = $isFinanced;
+
+        return $this;
+    }
+
+    /**
+     * Get isFinanced
+     *
+     * @return boolean
+     */
+    public function isFinanced(): boolean
+    {
+        return $this->isFinanced;
+    }
+}
