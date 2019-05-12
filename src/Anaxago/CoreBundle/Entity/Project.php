@@ -5,10 +5,12 @@ namespace Anaxago\CoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\ManyToOne;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * Project
  *
+ * @ApiResource
  * @ORM\Table(name="project")
  * @ORM\Entity(repositoryClass="Anaxago\CoreBundle\Repository\ProjectRepository")
  */

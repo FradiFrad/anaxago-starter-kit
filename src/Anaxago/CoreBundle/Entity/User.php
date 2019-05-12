@@ -11,10 +11,12 @@ namespace Anaxago\CoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
 use Symfony\Component\Security\Core\User\UserInterface;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
+ * @ApiResource
  */
 class User implements UserInterface
 {
